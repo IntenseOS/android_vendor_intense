@@ -33,14 +33,6 @@ PRODUCT_BOOTANIMATION := vendor/intense/prebuilt/common/bootanimation/$(TARGET_B
 endif
 endif
 
-ifdef INTENSE_NIGHTLY
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.rommanager.developerid=cyanogenmodnightly
-else
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.rommanager.developerid=cyanogenmod
-endif
-
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
@@ -78,13 +70,11 @@ PRODUCT_COPY_FILES += \
     vendor/intense/CHANGELOG.mkdn:system/etc/CHANGELOG-INTENSE.txt
 
 # Backup Tool
-ifneq ($(WITH_GMS),true)
 PRODUCT_COPY_FILES += \
     vendor/intense/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/intense/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
     vendor/intense/prebuilt/common/bin/50-cm.sh:system/addon.d/50-cm.sh \
     vendor/intense/prebuilt/common/bin/blacklist:system/addon.d/blacklist
-endif
 
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
