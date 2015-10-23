@@ -294,8 +294,7 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.intense.version=$(INTENSE_VERSION) \
   ro.intense.releasetype=$(INTENSE_BUILDTYPE) \
-  ro.modversion=$(INTENSE_VERSION) \
-  ro.cmlegal.url=https://cyngn.com/legal/privacy-policy
+  ro.intenseversion=$(INTENSE_VERSION) \
 
 -include vendor/intense-priv/keys/keys.mk
 
