@@ -138,7 +138,7 @@ PRODUCT_PACKAGES += \
     CMAccount \
     CMHome \
     OmniSwitch \
-    CyanogenSetupWizard \
+    IntenseSetupWizard \
     CMSettingsProvider
 
 # Intense Platform Library
