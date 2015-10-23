@@ -26,11 +26,7 @@ $(eval TARGET_BOOTANIMATION_NAME := $(shell \
 endef
 $(foreach size,$(bootanimation_sizes), $(call check_and_set_bootanimation,$(size)))
 
-ifeq ($(TARGET_BOOTANIMATION_HALF_RES),true)
-PRODUCT_BOOTANIMATION := vendor/intense/prebuilt/common/bootanimation/halfres/$(TARGET_BOOTANIMATION_NAME).zip
-else
 PRODUCT_BOOTANIMATION := vendor/intense/prebuilt/common/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip
-endif
 endif
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
@@ -65,16 +61,14 @@ ifneq ($(TARGET_BUILD_VARIANT),eng)
 ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
 endif
 
-# Copy over the changelog to the device
-PRODUCT_COPY_FILES += \
-    vendor/intense/CHANGELOG.mkdn:system/etc/CHANGELOG-INTENSE.txt
-
 # Backup Tool
+ifneq ($(WITH_GMS),true)
 PRODUCT_COPY_FILES += \
     vendor/intense/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/intense/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
     vendor/intense/prebuilt/common/bin/50-cm.sh:system/addon.d/50-cm.sh \
     vendor/intense/prebuilt/common/bin/blacklist:system/addon.d/blacklist
+endif
 
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
