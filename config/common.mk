@@ -137,6 +137,7 @@ PRODUCT_PACKAGES += \
     LockClock \
     CMAccount \
     CMHome \
+    OmniSwitch \
     CyanogenSetupWizard \
     CMSettingsProvider
 
