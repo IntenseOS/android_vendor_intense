@@ -1,12 +1,12 @@
-# Inherit common CM stuff
-$(call inherit-product, vendor/cm/config/common_full.mk)
+# Inherit common Intense stuff
+$(call inherit-product, vendor/intense/config/common_full.mk)
 
-# Required CM packages
+# Required Intense packages
 PRODUCT_PACKAGES += \
     LatinIME
 
-# Include CM LatinIME dictionaries
-PRODUCT_PACKAGE_OVERLAYS += vendor/cm/overlay/dictionaries
+# Include Intense LatinIME dictionaries
+PRODUCT_PACKAGE_OVERLAYS += vendor/intense/overlay/dictionaries
 
 # Default notification/alarm sounds
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -15,7 +15,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 ifeq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
     PRODUCT_COPY_FILES += \
-        vendor/cm/prebuilt/common/bootanimation/480.zip:system/media/bootanimation.zip
+        vendor/intense/prebuilt/common/bootanimation/480.zip:system/media/bootanimation.zip
 endif
 
-$(call inherit-product, vendor/cm/config/telephony.mk)
+$(call inherit-product, vendor/intense/config/telephony.mk)
