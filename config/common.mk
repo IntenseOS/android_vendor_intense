@@ -137,9 +137,13 @@ PRODUCT_PACKAGES += \
     LockClock \
     CMAccount \
     CMHome \
-    OmniSwitch \
-    IntenseSetupWizard \
     CMSettingsProvider
+    
+# Custom IntenseOS packages
+PRODUCT_PACKAGES += \
+    OTACenter \
+    CMSetupWizard \
+    OmniSwitch
 
 # Intense Platform Library
 PRODUCT_PACKAGES += \
