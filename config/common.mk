@@ -299,6 +299,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.intense.version=$(INTENSE_VERSION) \
   ro.intense.releasetype=$(INTENSE_BUILDTYPE) \
   ro.intenseversion=$(INTENSE_VERSION) \
+  intense.ota.version=$(shell date +%Y%m%d)
 
 -include vendor/intense-priv/keys/keys.mk
 
