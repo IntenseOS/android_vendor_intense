@@ -89,11 +89,6 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/intense/prebuilt/common/etc/init.local.rc:root/init.cm.rc
 
-# Bring in camera effects
-PRODUCT_COPY_FILES +=  \
-    vendor/intense/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
-    vendor/intense/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
-
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
     vendor/intense/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
@@ -115,8 +110,8 @@ PRODUCT_COPY_FILES += \
     vendor/intense/prebuilt/common/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
     vendor/intense/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
 
-# T-Mobile theme engine
-include vendor/intense/config/themes_common.mk
+# Theme engine
+include vendor/cm/config/themes_common.mk
 
 # Required Intense packages
 PRODUCT_PACKAGES += \
@@ -126,8 +121,6 @@ PRODUCT_PACKAGES += \
 
 # Optional Intense packages
 PRODUCT_PACKAGES += \
-    VoicePlus \
-    Basic \
     libemoji \
     Terminal
 
@@ -141,7 +134,7 @@ PRODUCT_PACKAGES += \
     Eleven \
     LockClock \
     CMAccount \
-    CMHome \
+    CyanogenSetupWizard \
     CMSettingsProvider
     
 # Custom IntenseOS packages
