@@ -135,7 +135,8 @@ PRODUCT_PACKAGES += \
     LockClock \
     CMAccount \
     CyanogenSetupWizard \
-    CMSettingsProvider
+    CMSettingsProvider \
+    ExactCalculator
     
 # Custom IntenseOS packages
 PRODUCT_PACKAGES += \
