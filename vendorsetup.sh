@@ -14,5 +14,5 @@
 # limitations under the License.
 #
 add_lunch_combo intense_nicki-userdebug
-add_lunch_combo vintense_lettuce-userdebug
+add_lunch_combo intense_lettuce-userdebug
 add_lunch_combo intense_tomato-userdebug
