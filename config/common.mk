@@ -111,7 +111,7 @@ PRODUCT_COPY_FILES += \
     vendor/intense/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
 
 # Theme engine
-include vendor/cm/config/themes_common.mk
+include vendor/intense/config/themes_common.mk
 
 # Required Intense packages
 PRODUCT_PACKAGES += \
