@@ -2,7 +2,7 @@
 
 # Exports
 
-. $ANDROID_BUILD_TOP/vendor/tipsy/tools/colors
+. $ANDROID_BUILD_TOP/vendor/intense/tools/colors
 
 export Changelog=Changelog.txt
 
