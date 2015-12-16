@@ -17,3 +17,4 @@ add_lunch_combo intense_nicki-userdebug
 add_lunch_combo intense_lettuce-userdebug
 add_lunch_combo intense_tomato-userdebug
 add_lunch_combo intense_awifi-userdebug
+add_lunch_combo intense_oneplus2-userdebug
