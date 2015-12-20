@@ -143,7 +143,6 @@ PRODUCT_PACKAGES += \
     
 # Custom IntenseOS packages
 PRODUCT_PACKAGES += \
-    OTACenter \
     CMSetupWizard \
     OmniSwitch
 
