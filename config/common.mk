@@ -133,18 +133,15 @@ PRODUCT_PACKAGES += \
     Launcher3 \
     Trebuchet \
     AudioFX \
-    CMWallpapers \
     CMFileManager \
     Eleven \
     LockClock \
-    CyanogenSetupWizard \
     CMSettingsProvider \
     ExactCalculator
     
 # Custom IntenseOS packages
 PRODUCT_PACKAGES += \
     OTACenter \
-    CMSetupWizard \
     OmniSwitch
 
 # Intense Platform Library
