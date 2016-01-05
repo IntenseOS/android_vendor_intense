@@ -142,7 +142,6 @@ PRODUCT_PACKAGES += \
     
 # Custom IntenseOS packages
 PRODUCT_PACKAGES += \
-    OTACenter \
     OmniSwitch
 
 # Intense Platform Library
