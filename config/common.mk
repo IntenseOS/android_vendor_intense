@@ -127,9 +127,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Launcher3 \
     Trebuchet \
-    AudioFX \
     CMFileManager \
-    Eleven \
     LockClock \
     CMSettingsProvider \
     ExactCalculator
@@ -137,7 +135,8 @@ PRODUCT_PACKAGES += \
 # Custom IntenseOS packages
 PRODUCT_PACKAGES += \
     OmniSwitch \
-    Snap
+    Snap \
+    Apollo
 
 # Intense Platform Library
 PRODUCT_PACKAGES += \
