@@ -136,7 +136,8 @@ PRODUCT_PACKAGES += \
     
 # Custom IntenseOS packages
 PRODUCT_PACKAGES += \
-    OmniSwitch
+    OmniSwitch \
+    SnapdragonCamera
 
 # Intense Platform Library
 PRODUCT_PACKAGES += \
