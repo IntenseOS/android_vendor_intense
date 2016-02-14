@@ -41,6 +41,8 @@ checkapi-cm : check-cm-public-api
 # (See vendor/cmsdk/Android.mk)
 # we need to add api-stubs as additional dependency of the api check.
 
+$(INTERNAL_CM_PLATFORM_API_FILE): cm-api-stubs-docs
+
 # Check that the API we're building hasn't broken the last-released
 # SDK version.
 $(eval $(call check-api, \
@@ -49,11 +51,13 @@ $(eval $(call check-api, \
     $(INTERNAL_CM_PLATFORM_API_FILE), \
     $(FRAMEWORK_CM_PLATFORM_REMOVED_API_FILE), \
     $(INTERNAL_CM_PLATFORM_REMOVED_API_FILE), \
-    cat $(BUILD_SYSTEM)/apicheck_msg_last.txt, \
+    -hide 2 -hide 3 -hide 4 -hide 5 -hide 6 -hide 24 -hide 25 -hide 26 -hide 27 \
+    -error 7 -error 8 -error 9 -error 10 -error 11 -error 12 -error 13 -error 14 -error 15 \
+    -error 16 -error 17 -error 18 , \
+    cat $(FRAMEWORK_CM_API_NEEDS_UPDATE_TEXT), \
     check-cm-public-api, \
-    $(call doc-timestamp-for, cm-api-stubs) \
+    $(call doc-timestamp-for,cm-api-stubs) \
     ))
-
 
 # Check that the API we're building hasn't changed from the not-yet-released
 # SDK version.
@@ -63,9 +67,13 @@ $(eval $(call check-api, \
     $(INTERNAL_CM_PLATFORM_API_FILE), \
     $(FRAMEWORK_CM_PLATFORM_REMOVED_API_FILE), \
     $(INTERNAL_CM_PLATFORM_REMOVED_API_FILE), \
-    cat $(BUILD_SYSTEM)/apicheck_msg_current.txt, \
+    -error 2 -error 3 -error 4 -error 5 -error 6 \
+    -error 7 -error 8 -error 9 -error 10 -error 11 -error 12 -error 13 -error 14 -error 15 \
+    -error 16 -error 17 -error 18 -error 19 -error 20 -error 21 -error 23 -error 24 \
+    -error 25 -error 26 -error 27, \
+    cat $(FRAMEWORK_CM_API_NEEDS_UPDATE_TEXT), \
     check-cm-public-api, \
-    $(call doc-timestamp-for, cm-api-stubs) \
+    $(call doc-timestamp-for,cm-api-stubs) \
     ))
 
 .PHONY: update-cm-public-api
@@ -81,7 +89,9 @@ update-cm-api : update-cm-public-api
 .PHONY: check-cm-system-api
 checkapi-cm : check-cm-system-api
 
-# Check that the Cyanogen System API we're building hasn't broken the last-released
+$(INTERNAL_CM_PLATFORM_SYSTEM_API_FILE): cm-system-api-stubs-docs
+
+# Check that the System API we're building hasn't broken the last-released
 # SDK version.
 $(eval $(call check-api, \
     checksystemapi-cm-last, \
@@ -89,9 +99,12 @@ $(eval $(call check-api, \
     $(INTERNAL_CM_PLATFORM_SYSTEM_API_FILE), \
     $(FRAMEWORK_CM_PLATFORM_SYSTEM_REMOVED_API_FILE), \
     $(INTERNAL_CM_PLATFORM_SYSTEM_REMOVED_API_FILE), \
-    cat $(BUILD_SYSTEM)/apicheck_msg_last.txt, \
+    -hide 2 -hide 3 -hide 4 -hide 5 -hide 6 -hide 24 -hide 25 -hide 26 -hide 27 \
+    -error 7 -error 8 -error 9 -error 10 -error 11 -error 12 -error 13 -error 14 -error 15 \
+    -error 16 -error 17 -error 18 , \
+    cat $(FRAMEWORK_CM_API_NEEDS_UPDATE_TEXT), \
     check-cm-system-api, \
-    $(call doc-timestamp-for, cm-system-api-stubs) \
+    $(call doc-timestamp-for,cm-system-api-stubs) \
     ))
 
 # Check that the System API we're building hasn't changed from the not-yet-released
@@ -102,9 +115,13 @@ $(eval $(call check-api, \
     $(INTERNAL_CM_PLATFORM_SYSTEM_API_FILE), \
     $(FRAMEWORK_CM_PLATFORM_SYSTEM_REMOVED_API_FILE), \
     $(INTERNAL_CM_PLATFORM_SYSTEM_REMOVED_API_FILE), \
-    cat $(BUILD_SYSTEM)/apicheck_msg_current.txt, \
+    -error 2 -error 3 -error 4 -error 5 -error 6 \
+    -error 7 -error 8 -error 9 -error 10 -error 11 -error 12 -error 13 -error 14 -error 15 \
+    -error 16 -error 17 -error 18 -error 19 -error 20 -error 21 -error 23 -error 24 \
+    -error 25 -error 26 -error 27, \
+    cat $(FRAMEWORK_CM_API_NEEDS_UPDATE_TEXT), \
     check-cm-system-api, \
-    $(call doc-timestamp-for, cm-system-api-stubs) \
+    $(call doc-timestamp-for,cm-system-api-stubs) \
     ))
 
 .PHONY: update-cm-system-api
